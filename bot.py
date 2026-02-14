@@ -1359,8 +1359,8 @@ async def delete_goal_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = []
     for goal in user_data['goals']:
         keyboard.append([InlineKeyboardButton(
-            f"🗑️ {goal['name']}", 
-            callback_data=f'del_goal_{goal[\"id\"]}'
+            f"🗑️ {goal['name']}",
+            callback_data=f"del_goal_{goal['id']}"   # ← ИСПРАВЛЕНО
         )])
     keyboard.append([InlineKeyboardButton(f"{EMOJI['back']} Отмена", callback_data='settings')])
 
