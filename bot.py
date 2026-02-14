@@ -570,8 +570,8 @@ async def manual_add_to_goal_start(update: Update, context: ContextTypes.DEFAULT
     keyboard = []
     for goal in user_data['goals']:
         keyboard.append([InlineKeyboardButton(
-            f"{goal['name']} ({format_money(goal['saved'])}/{format_money(goal['amount'])})", 
-            callback_data=f'manual_goal_{goal[\"id\"]}'
+            f"{goal['name']} ({format_money(goal['saved'])}/{format_money(goal['amount'])})",
+            callback_data=f"manual_goal_{goal['id']}"      # ← ИСПРАВЛЕНО
         )])
 
     await query.edit_message_text(
